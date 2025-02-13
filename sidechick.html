@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:wght@500&display=swap');
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin: 0;
+        }
+        .paper {
+            width: 300px;
+            height: 200px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.5s ease-in-out;
+        }
+        .paper.open {
+            transform: scale(1.2) rotateX(0deg);
+        }
+        .letter {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            display: none;
+        }
+        .letter.open {
+            opacity: 1;
+            transform: translateY(0);
+            display: block;
+        }
+        .heart {
+            color: red;
+            font-size: 2rem;
+            animation: heartbeat 1s infinite;
+        }
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            margin-top: 10px;
+            color: #d6336c;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #d6336c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background-color: #b02a56;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+    </style>
+</head>
+<body>
+    <div class="paper" onclick="openLetter()">final nato promise</div>
+    <div class="letter" id="letter">
+        <h2>To Cutie patuti juju,</h2>
+        <p>Happy Valentines Ju</p>
+        <p>i know this letter might not be worth anything like the other gifts ive sent you</p>
+        <p>this letter serves as my appreciation on your presence ever since i had been so insecure about myself</p>
+        <p>i didnt really think about other stuffs before idk how to say this but u just make me more better even though we dont talk alot thats my problem my bad.</p>
+        <p>but you continue to encourage me on building my confidence even more. all i can say is Thank you ju</p>
+        <p class="signature">From your skibidi toilet lee</p>
+        <div class="heart">❤️</div>
+        <button class="button" onclick="goToPage()">wag mo click</button>
+    </div>
+    
+    <script>
+        function openLetter() {
+            document.querySelector('.paper').style.display = 'none';
+            let letter = document.getElementById('letter');
+            letter.classList.add('open');
+        }
+        
+        function goToPage() {
+            window.location.href = 'https://i.pinimg.com/originals/dc/dd/45/dcdd45bc02f89241babe4ab61ce69f01.gif';
+        }
+    </script>
+</body>
+</html>
